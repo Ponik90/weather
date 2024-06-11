@@ -10,6 +10,18 @@ class HomeProvider with ChangeNotifier {
   bool isInternet = true;
   String search = 'surat';
   bool isTheme = true;
+  List<String> bookMark = [];
+
+  Future<void> getBookmark([name,temp]) async {
+    SharedHelper helper = SharedHelper();
+    List<String>? data = await helper.getBookmark();
+    if(data != null)
+      {
+        bookMark.addAll([name,temp]);
+      }
+    helper.setBookmark(bookMark);
+    notifyListeners();
+  }
 
   Future<void> changeTheme() async {
     SharedHelper helper = SharedHelper();

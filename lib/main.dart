@@ -27,6 +27,7 @@ void main() {
             routes: screen,
             theme: lightTheme,
             darkTheme: darkTheme,
+            themeMode: value.isTheme == true ? ThemeMode.light : ThemeMode.dark,
           );
         },
       ),
