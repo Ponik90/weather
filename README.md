@@ -27,7 +27,7 @@ Upcoming birthday time calculation
 <img align="left" src="https://github.com/Ponik90/weather/assets/156168435/9c5d23f4-fed6-4937-85d6-0787d5959fac" width="220px">
 <img src="https://github.com/Ponik90/weather/assets/156168435/d152fa70-8f17-4ff5-92b6-d5b52de31bcc" width="220px">
 <img align="left" src="https://github.com/Ponik90/weather/assets/156168435/5b182fed-ec4b-42a2-b791-7b5c31c37905" width="220px">
-<img align="left" src="https://github.com/Ponik90/weather/assets/156168435/9c5d23f4-fed6-4937-85d6-0787d5959fac" width="220px">
+
 <img src="https://github.com/Ponik90/weather/assets/156168435/eb60d671-05c6-40de-9927-6635b425dba8" width="220px">
 
 
