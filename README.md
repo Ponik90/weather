@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/Ponik90/weather/assets/156168435/b0876e88-c9ca-469c-9147-008e3f5e6ae1",height="200" width="200">
+<img src="https://github.com/Ponik90/weather/assets/156168435/b0876e88-c9ca-469c-9147-008e3f5e6ae1" hleight="200" width="200">
 
 
 
