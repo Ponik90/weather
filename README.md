@@ -4,8 +4,8 @@
 
 
 
-# **Age Calculator**
-Simple Age Calculator app made with Flutter in India.
+# **Weather App**
+Simple Weather app made with Flutter in India.
 
 ---
 
@@ -15,12 +15,19 @@ Simple Age Calculator app made with Flutter in India.
 
 ## 🗒 About
 
-This is a simple app made for knowing total passed out time from your birthdate until now in the form of Years, Months and Days. You can also get upcoming or remaining time duration for your next birthday in the form of Months and Days.
+This is a simple app made for knowing Weather of other city.
+"Weather App" is a feature-rich weather application built using Flutter, incorporating key
+concepts such as API calling, Shared Preferences, and network connectivity. The app offers a
+comprehensive set of functionalities designed to provide users with accurate and timely weather
+information for cities, states, and countries.
 
 ## ⚙️ Features
 Main features are as follows:
-Passed Time duration until now from birthdate
-Upcoming birthday time calculation
+
+Known differnt city weather.
+Theme change.
+Add to Like city Weather.
+
 ## 📲 Screenshots
 
 
@@ -38,7 +45,9 @@ Upcoming birthday time calculation
 
 <div align="center">
 
-<img src="./assets/icons/logo.png" width="200px" height="200px">
+
+https://github.com/Ponik90/weather/assets/156168435/e8fd8af5-062b-43f1-82e6-5f94166f447b
+
 
 ### Made with ❤️ in India.
 ---
