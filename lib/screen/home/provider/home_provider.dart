@@ -12,13 +12,12 @@ class HomeProvider with ChangeNotifier {
   bool isTheme = true;
   List<String> bookMark = [];
 
-  Future<void> getBookmark([name,temp]) async {
+  Future<void> getBookmark([name, temp]) async {
     SharedHelper helper = SharedHelper();
     List<String>? data = await helper.getBookmark();
-    if(data != null)
-      {
-        bookMark.addAll([name,temp]);
-      }
+    if (data != null) {
+      bookMark.addAll([name, temp]);
+    }
     helper.setBookmark(bookMark);
     notifyListeners();
   }

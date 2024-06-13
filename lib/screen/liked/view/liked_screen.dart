@@ -52,9 +52,6 @@ class _LikedScreenState extends State<LikedScreen> {
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(
-                        width: 50,
-                      ),
                       const Text(
                         "City Weather",
                         style: TextStyle(
@@ -69,7 +66,7 @@ class _LikedScreenState extends State<LikedScreen> {
                     height: 30,
                   ),
                   Container(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(10),
                     width: MediaQuery.sizeOf(context).width * 0.90,
                     decoration: BoxDecoration(
                       color: const Color(0xff63C9C9),
@@ -81,10 +78,38 @@ class _LikedScreenState extends State<LikedScreen> {
                         ),
                       ],
                     ),
-                    child: const Row(
-                      children: [
-                        Text("Surat"),
-                      ],
+                    child:  ListTile(
+                      leading: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Surat",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
+                          Text(
+                            "IN",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      title: const Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "23°C",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                          ),
+                        ),
+                      ),
+
+                      trailing: Image.asset("assets/icon/sun_rain.png"),
                     ),
                   ),
                 ],

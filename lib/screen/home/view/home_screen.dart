@@ -277,8 +277,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   children: [
                                                     weatherTime(
                                                       time: "5:00",
-                                                      icon: Icons
-                                                          .wb_sunny_rounded,
+                                                      icon:
+                                                          "assets/icon/sunrise.png",
                                                       temp: "sunrise",
                                                     ),
                                                     const SizedBox(
@@ -286,7 +286,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "6:00",
-                                                      icon: Icons.cloud,
+                                                      icon:
+                                                          "assets/icon/sun.png",
                                                       temp: "29°C",
                                                     ),
                                                     const SizedBox(
@@ -294,7 +295,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "8:00",
-                                                      icon: Icons.cloud_rounded,
+                                                      icon:
+                                                          "assets/icon/sun_rain.png",
+
                                                       temp: "28°C",
                                                     ),
                                                     const SizedBox(
@@ -302,8 +305,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "10:00",
-                                                      icon: Icons
-                                                          .wb_sunny_rounded,
+                                                      icon:
+                                                          "assets/icon/cloud.png",
                                                       temp: "32°C",
                                                     ),
                                                     const SizedBox(
@@ -311,8 +314,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "12:00",
-                                                      icon: Icons
-                                                          .wb_sunny_rounded,
+                                                      icon:
+                                                          "assets/icon/cloud.png",
                                                       temp: "32°C",
                                                     ),
                                                     const SizedBox(
@@ -320,8 +323,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "14:00",
-                                                      icon: Icons
-                                                          .wb_sunny_rounded,
+                                                      icon:
+                                                          "assets/icon/cloud.png",
                                                       temp: "34°C",
                                                     ),
                                                     const SizedBox(
@@ -329,8 +332,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "16:00",
-                                                      icon: Icons
-                                                          .wb_sunny_rounded,
+                                                      icon:
+                                                          "assets/icon/sun_rain.png",
                                                       temp: "34°C",
                                                     ),
                                                     const SizedBox(
@@ -338,8 +341,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "18:00",
-                                                      icon: Icons
-                                                          .wb_sunny_rounded,
+                                                      icon:
+                                                          "assets/icon/sunset.png",
                                                       temp: "33°C",
                                                     ),
                                                     const SizedBox(
@@ -347,8 +350,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "20:00",
-                                                      icon: Icons
-                                                          .wb_sunny_rounded,
+                                                      icon:
+                                                          "assets/icon/moon_fast_wind.png",
                                                       temp: "31°C",
                                                     ),
                                                     const SizedBox(
@@ -356,8 +359,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "22:00",
-                                                      icon: Icons
-                                                          .wb_sunny_rounded,
+                                                      icon:
+                                                          "assets/icon/moon_fast_wind.png",
                                                       temp: "31°C",
                                                     ),
                                                     const SizedBox(
@@ -365,8 +368,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                     weatherTime(
                                                       time: "24:00",
-                                                      icon: Icons
-                                                          .wb_sunny_rounded,
+                                                      icon:
+                                                          "assets/icon/moon_rain.png",
                                                       temp: "31°C",
                                                     ),
                                                   ],
@@ -481,9 +484,10 @@ class _HomeScreenState extends State<HomeScreen> {
           time,
           style: const TextStyle(color: Colors.white),
         ),
-        Icon(
+        Image.asset(
           icon,
-
+          height: 30,
+          width: 30,
         ),
         Text(
           temp,
