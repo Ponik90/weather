@@ -1,6 +1,6 @@
 class HomeModel {
   String? name;
-  int? id, timezone, cod;
+  int? id, timezone, cod, visibility;
   CoordModel? coord;
   List<WeatherModel?>? weather;
   MainModel? main;
@@ -10,6 +10,7 @@ class HomeModel {
 
   HomeModel(
       {this.name,
+      this.visibility,
       this.id,
       this.timezone,
       this.cod,
@@ -24,6 +25,7 @@ class HomeModel {
     List l1 = m1['weather'];
     return HomeModel(
       id: m1['id'],
+      visibility: m1['visibility'],
       name: m1['name'],
       timezone: m1['timezone'],
       cod: m1['cod'],
