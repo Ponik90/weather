@@ -11,14 +11,32 @@ class HomeProvider with ChangeNotifier {
   String search = 'surat';
   bool isTheme = true;
   List<String> bookMark = [];
+  SharedHelper helper = SharedHelper();
 
-  Future<void> getBookmark([name, temp]) async {
-    SharedHelper helper = SharedHelper();
+  Future<void> setBookmark(String name) async {
     List<String>? data = await helper.getBookmark();
     if (data != null) {
-      bookMark.addAll([name, temp]);
+      data.add(name);
+      helper.setBookmark(data);
+    } else {
+      helper.setBookmark([name]);
     }
-    helper.setBookmark(bookMark);
+
+    getBookmark();
+    notifyListeners();
+  }
+
+  Future<void> getBookmark() async {
+    var list = await helper.getBookmark();
+    if (list != null) {
+      bookMark = list;
+      notifyListeners();
+    }
+  }
+
+  void deleteBookmark(index) {
+    bookMark.removeAt(index);
+    helper.getBookmark();
     notifyListeners();
   }
 

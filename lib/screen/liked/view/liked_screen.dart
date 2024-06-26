@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../home/provider/home_provider.dart';
 
 class LikedScreen extends StatefulWidget {
   const LikedScreen({super.key});
@@ -65,51 +68,51 @@ class _LikedScreenState extends State<LikedScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    width: MediaQuery.sizeOf(context).width * 0.90,
-                    decoration: BoxDecoration(
-                      color: const Color(0xff63C9C9),
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xff1B6464).withOpacity(0.5),
-                          offset: const Offset(5, 5),
-                        ),
-                      ],
-                    ),
-                    child:  ListTile(
-                      leading: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Surat",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: context.read<HomeProvider>().bookMark.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          padding: const EdgeInsets.all(10),
+                          margin: const EdgeInsets.all(10),
+                          width: MediaQuery.sizeOf(context).width * 0.90,
+                          decoration: BoxDecoration(
+                            color: const Color(0xff63C9C9),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(0xff1B6464).withOpacity(0.5),
+                                offset: const Offset(5, 5),
+                              ),
+                            ],
+                          ),
+                          child: ListTile(
+                            leading: Text(
+                              context.watch<HomeProvider>().bookMark[index],
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
+                            title: Image.asset(
+                              "assets/icon/sun_rain.png",
+                              height: 50,
+                              width: 50,
+                            ),
+                            trailing: IconButton(
+                              onPressed: () {
+                                context
+                                    .read<HomeProvider>()
+                                    .deleteBookmark(index);
+                              },
+                              icon: const Icon(
+                                Icons.close,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
-                          Text(
-                            "IN",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ],
-                      ),
-                      title: const Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "23°C",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-
-                      trailing: Image.asset("assets/icon/sun_rain.png"),
+                        );
+                      },
                     ),
                   ),
                 ],

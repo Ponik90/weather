@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     } else {
       const NoInternetScreen();
     }
+    context.read<HomeProvider>().getBookmark();
   }
 
   @override
@@ -166,13 +167,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   const Spacer(),
                                                   IconButton(
                                                     onPressed: () {
-                                                      providerR!.getBookmark([
-                                                        model.name,
-                                                        model.main!.temp
-                                                      ]);
+                                                      providerR!.setBookmark(
+                                                          model.name!);
                                                     },
                                                     icon: const Icon(
-                                                      Icons.favorite_border,
+                                                      Icons.favorite,
                                                       color: Colors.white,
                                                     ),
                                                   ),
@@ -297,7 +296,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       time: "8:00",
                                                       icon:
                                                           "assets/icon/sun_rain.png",
-
                                                       temp: "28°C",
                                                     ),
                                                     const SizedBox(
@@ -463,7 +461,6 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Icon(
             icon,
-
           ),
           Text(
             detail,
