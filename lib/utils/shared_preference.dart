@@ -6,10 +6,10 @@ class SharedHelper {
     await shr.setBool('true', themeData);
   }
 
-  Future<bool> getTheme() async {
+  Future<bool?> getTheme() async {
     bool? data;
     SharedPreferences shr = await SharedPreferences.getInstance();
-    data = shr.getBool('true')!;
+    data = shr.getBool('true');
     return data;
   }
 

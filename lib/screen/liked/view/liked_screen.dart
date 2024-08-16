@@ -11,8 +11,19 @@ class LikedScreen extends StatefulWidget {
 }
 
 class _LikedScreenState extends State<LikedScreen> {
+  HomeProvider? providerR;
+  HomeProvider? providerW;
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<HomeProvider>().getBookmark();
+  }
+
   @override
   Widget build(BuildContext context) {
+    providerW = context.watch<HomeProvider>();
+    providerR = context.read<HomeProvider>();
     return Scaffold(
       body: Container(
         height: MediaQuery.sizeOf(context).height,
@@ -70,7 +81,7 @@ class _LikedScreenState extends State<LikedScreen> {
                   ),
                   Expanded(
                     child: ListView.builder(
-                      itemCount: context.read<HomeProvider>().bookMark.length,
+                      itemCount: providerR!.bookMark.length,
                       itemBuilder: (context, index) {
                         return Container(
                           padding: const EdgeInsets.all(10),
@@ -88,7 +99,7 @@ class _LikedScreenState extends State<LikedScreen> {
                           ),
                           child: ListTile(
                             leading: Text(
-                              context.watch<HomeProvider>().bookMark[index],
+                              providerR!.bookMark[index],
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -101,9 +112,7 @@ class _LikedScreenState extends State<LikedScreen> {
                             ),
                             trailing: IconButton(
                               onPressed: () {
-                                context
-                                    .read<HomeProvider>()
-                                    .deleteBookmark(index);
+                                providerW!.deleteBookmark(index);
                               },
                               icon: const Icon(
                                 Icons.close,

@@ -36,13 +36,17 @@ class HomeProvider with ChangeNotifier {
 
   void deleteBookmark(index) {
     bookMark.removeAt(index);
-    helper.getBookmark();
+    helper.setBookmark(bookMark);
     notifyListeners();
   }
 
   Future<void> changeTheme() async {
     SharedHelper helper = SharedHelper();
-    isTheme = await helper.getTheme();
+    if (await helper.getTheme() == null) {
+      isTheme = true;
+    } else {
+      isTheme = (await helper.getTheme())!;
+    }
     notifyListeners();
   }
 

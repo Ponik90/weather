@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   TextEditingController txtSearch = TextEditingController();
   HomeProvider? providerR;
   HomeProvider? providerW;
+  var scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -36,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
     providerW = context.watch<HomeProvider>();
     return providerW!.isInternet == true
         ? Scaffold(
+            key: scaffoldKey,
             body: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Container(
@@ -66,31 +68,47 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 50),
-                            child: TextField(
-                              controller: txtSearch,
-                              decoration: InputDecoration(
-                                fillColor: Colors.white,
-                                filled: true,
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.circular(25),
-                                ),
-                                hintText: "Enter location",
-                                hintStyle: const TextStyle(
-                                  color: Color(0xff88BBBB),
-                                  fontSize: 18,
-                                ),
-                                contentPadding: const EdgeInsets.all(5),
-                                prefixIcon: IconButton(
+                            child: Row(
+                              children: [
+                                IconButton(
                                   onPressed: () {
-                                    if (txtSearch.text.isNotEmpty) {
-                                      providerR!.searchData(txtSearch.text);
-                                    }
+                                    scaffoldKey.currentState!.openDrawer();
                                   },
-                                  icon: const Icon(Icons.search),
-                                  color: const Color(0xff1B6464),
+                                  icon: const Icon(
+                                    Icons.menu,
+                                    size: 30,
+                                  ),
                                 ),
-                              ),
+                                Expanded(
+                                  child: TextField(
+                                    controller: txtSearch,
+                                    decoration: InputDecoration(
+                                      fillColor: Colors.white,
+                                      filled: true,
+                                      border: OutlineInputBorder(
+                                        borderSide: BorderSide.none,
+                                        borderRadius: BorderRadius.circular(25),
+                                      ),
+                                      hintText: "Enter location",
+                                      hintStyle: const TextStyle(
+                                        color: Color(0xff88BBBB),
+                                        fontSize: 18,
+                                      ),
+                                      contentPadding: const EdgeInsets.all(5),
+                                      prefixIcon: IconButton(
+                                        onPressed: () {
+                                          if (txtSearch.text.isNotEmpty) {
+                                            providerR!
+                                                .searchData(txtSearch.text);
+                                          }
+                                        },
+                                        icon: const Icon(Icons.search),
+                                        color: const Color(0xff1B6464),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           const SizedBox(
@@ -425,22 +443,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    const Divider(),
-                    Row(
-                      children: [
-                        const Text("Liked City"),
-                        const Spacer(),
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'liked');
-                          },
-                          icon: const Icon(
-                            Icons.favorite,
-                            color: Color(0xff63C9C9),
-                          ),
-                        ),
-                      ],
-                    )
+                    ListTile(
+                      contentPadding: EdgeInsets.only(right: 10),
+                      onTap: () {
+                        Navigator.pushNamed(context, 'liked');
+                      },
+                      title: const Text("Liked City"),
+                      trailing: const Icon(
+                        Icons.favorite,
+                        color: Color(0xff63C9C9),
+                      ),
+                    ),
                   ],
                 ),
               ),
