@@ -10,7 +10,7 @@ class NoInternetScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/image/no_internet.jpg"),
+            Image.asset("assets/image/no_internet.png"),
             const Text(
               "Please Check Your Internet",
               style: TextStyle(

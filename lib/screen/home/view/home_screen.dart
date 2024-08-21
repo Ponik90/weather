@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:weather_app/screen/home/model/home_model.dart';
 import 'package:weather_app/screen/home/provider/home_provider.dart';
 import 'package:weather_app/screen/no_internet/view/no_internet_screen.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../utils/shared_preference.dart';
 
@@ -393,7 +394,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                               ),
                                             ],
                                           ),
-                                        )
+                                        ),
+                                        Lottie.asset(
+                                          "assets/lottie/animation.json",
+                                          width:
+                                              MediaQuery.sizeOf(context).width,
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -444,7 +450,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     ListTile(
-                      contentPadding: EdgeInsets.only(right: 10),
+                      contentPadding: const EdgeInsets.only(right: 10),
                       onTap: () {
                         Navigator.pushNamed(context, 'liked');
                       },
