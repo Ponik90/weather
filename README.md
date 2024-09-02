@@ -30,8 +30,8 @@ Add to Like city Weather.
 
 ## 📲 Screenshots
 
-<img align="left" src="https://github.com/user-attachments/assets/e1f898e1-72d9-457e-8e0a-1aa91f2db5f2" width="220px">
-<img align="left" src="https://github.com/user-attachments/assets/f5be76c1-c4e6-4307-ab34-41e25139fecb" width="220px">
+<img align="left" src="https://github.com/user-attachments/assets/381f6a3f-3210-4655-9f69-1e58023312fa" width="220px">
+<img align="left" src="https://github.com/user-attachments/assets/503523bc-18f0-4757-98ee-05f24cfde11d" width="220px">
 <img src="https://github.com/Ponik90/weather/assets/156168435/d152fa70-8f17-4ff5-92b6-d5b52de31bcc" width="220px">
 <img align="left" src="https://github.com/Ponik90/weather/assets/156168435/5b182fed-ec4b-42a2-b791-7b5c31c37905" width="220px">
 <img align="left" src="https://github.com/Ponik90/weather/assets/156168435/9bbfbaae-dce1-4d82-8667-7ab138c2bdfc" width="220px">
