@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:weather_app/screen/home/model/home_model.dart';
+
+import '../../home/provider/home_provider.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key});
@@ -9,22 +12,33 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
+  HomeProvider? providerR;
+  HomeProvider? providerW;
+
   @override
   Widget build(BuildContext context) {
     HomeModel model = ModalRoute.of(context)!.settings.arguments as HomeModel;
+    providerR = context.read<HomeProvider>();
+    providerW = context.watch<HomeProvider>();
     return Scaffold(
       body: Container(
         height: MediaQuery.sizeOf(context).height,
         width: MediaQuery.sizeOf(context).width,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xff30BBBB),
-              Color(0xff6CD6D6),
-              Color(0xff95FFFF),
-            ],
+            colors: providerW!.isTheme == false
+                ? [
+                    const Color(0xff257c7c),
+                    const Color(0xff267e7e),
+                    const Color(0xff183e3e),
+                  ]
+                : [
+                    const Color(0xff30BBBB),
+                    const Color(0xff6CD6D6),
+                    const Color(0xff95FFFF),
+                  ],
           ),
         ),
         child: Stack(
@@ -34,6 +48,7 @@ class _DetailScreenState extends State<DetailScreen> {
               height: MediaQuery.sizeOf(context).height,
               width: MediaQuery.sizeOf(context).width,
               opacity: const AlwaysStoppedAnimation(0.7),
+              fit: BoxFit.fill,
             ),
             Padding(
               padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
@@ -70,7 +85,9 @@ class _DetailScreenState extends State<DetailScreen> {
                       padding: const EdgeInsets.all(20),
                       width: MediaQuery.sizeOf(context).width * 0.90,
                       decoration: BoxDecoration(
-                        color: const Color(0xff63C9C9),
+                        color: providerW!.isTheme == false
+                            ? const Color(0xff448787)
+                            : const Color(0xff63C9C9),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
@@ -116,7 +133,9 @@ class _DetailScreenState extends State<DetailScreen> {
                       padding: const EdgeInsets.all(20),
                       width: MediaQuery.sizeOf(context).width * 0.90,
                       decoration: BoxDecoration(
-                        color: const Color(0xff63C9C9),
+                        color: providerW!.isTheme == false
+                            ? const Color(0xff448787)
+                            : const Color(0xff63C9C9),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
@@ -162,7 +181,9 @@ class _DetailScreenState extends State<DetailScreen> {
                       padding: const EdgeInsets.all(20),
                       width: MediaQuery.sizeOf(context).width * 0.90,
                       decoration: BoxDecoration(
-                        color: const Color(0xff63C9C9),
+                        color: providerW!.isTheme == false
+                            ? const Color(0xff448787)
+                            : const Color(0xff63C9C9),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
